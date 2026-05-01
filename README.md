@@ -121,7 +121,16 @@ Week 1 begins May 2, 2026.
 
 ## Background
 
-Boeing embedded systems engineer. MIL-STD-1553 and safety-critical systems experience. Transitioning into firmware architecture at the hardware/software boundary.
+Boeing embedded systems engineer. Experience in security protocols and secure systems. Transitioning into firmware architecture at the hardware/software boundary.
 
 This repo is the work. Come back in a year and read the commit history.
 
+---
+
+## A note on AI
+
+This README and the curriculum prompt that drives the weekly problem and tutorial delivery were created with the assistance of Claude (Anthropic). The project schedule, weekly deliverables, and problem structure are managed through a Claude project acting as a senior engineer execution agent.
+
+Beyond that — no AI assistance is permitted.
+
+The weekly problems, solutions, reports, and interview question answers are written entirely by hand. The constraints in the curriculum prompt are strict by design: solutions must be defended cold, concepts must be explained from memory, and code must be understood at the level of first principles before anything advances. If you read the weekly reports and the commit history, you will see the work. That is the point.
