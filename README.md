@@ -134,3 +134,11 @@ This README and the curriculum prompt that drives the weekly problem and tutoria
 Beyond that — no AI assistance is permitted.
 
 The weekly problems, solutions, reports, and interview question answers are written entirely by hand. The constraints in the curriculum prompt are strict by design: solutions must be defended cold, concepts must be explained from memory, and code must be understood at the level of first principles before anything advances. If you read the weekly reports and the commit history, you will see the work. That is the point.
+
+---
+
+## LMS
+
+The grading and scheduling layer for this curriculum lives in [`lms/`](./lms/). It is a Next.js + Supabase + Anthropic API application that operates the syllabus, generates weekly READING/TUTORIAL/PROBLEM markdown, grades submissions, tracks gaps, and gates phase transitions on KINESIS milestones.
+
+See [`lms/README.md`](./lms/README.md) for setup and [`lms/ARCHITECTURE.md`](./lms/ARCHITECTURE.md) for design notes.

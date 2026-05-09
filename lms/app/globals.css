@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-bg: #0b0d10;
+  --color-surface: #14171c;
+  --color-surface-2: #1b1f26;
+  --color-border: #262b34;
+  --color-text: #e6e8eb;
+  --color-text-dim: #9aa3af;
+  --color-accent: #4ea1ff;
+  --color-accent-2: #7ee7c7;
+  --color-warn: #f5b454;
+  --color-error: #f97373;
+  --color-ok: #6ee7b7;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a { color: var(--color-accent); }
+a:hover { text-decoration: underline; }
+
+button, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+input, textarea, select {
+  font-size: 16px; /* prevent iOS zoom on focus */
+}
+
+.prose-lms {
+  color: var(--color-text);
+  max-width: 72ch;
+}
+.prose-lms h1, .prose-lms h2, .prose-lms h3 { color: var(--color-text); }
+.prose-lms code {
+  background: var(--color-surface-2);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+.prose-lms pre {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  padding: 1em;
+  overflow-x: auto;
+}
+.prose-lms blockquote {
+  border-left: 3px solid var(--color-border);
+  padding-left: 1em;
+  color: var(--color-text-dim);
+}

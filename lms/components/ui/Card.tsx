@@ -1,0 +1,30 @@
+import { type HTMLAttributes } from "react";
+
+import { cn } from "@/lib/utils";
+
+export function Card({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cn(
+        "rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-4 sm:p-5",
+        className,
+      )}
+      {...rest}
+    />
+  );
+}
+
+export function CardHeader({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className={cn("mb-3 flex items-center justify-between", className)} {...rest} />
+  );
+}
+
+export function CardTitle({ className, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h2
+      className={cn("text-base font-medium tracking-tight text-[color:var(--color-text)]", className)}
+      {...rest}
+    />
+  );
+}
