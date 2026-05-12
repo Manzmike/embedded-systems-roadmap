@@ -47,10 +47,13 @@ Every weekend follows the same structure without exception.
 
 | Block | Time | Purpose |
 |---|---|---|
+| Problem opens | Saturday 5:00 AM | Privacy screen lifts, PROBLEM.md becomes visible |
 | Reading | Saturday 7–10 AM | K&R topic + Linux concept + DSA concept |
-| Build start | Saturday 5–9 PM | Tutorial + project start |
-| Build finish | Sunday 6:30–8:30 AM | Project completion |
+| Build start | Saturday 5–9 PM | Tutorial + Tier 1–3 problems start |
+| Build finish | Sunday 6:30–8:30 AM | Tier 4 push, Tier 5 Mastery Confirmed gate |
 | Report | Sunday 4:30–6 PM | Written report + GitHub commit |
+
+The full submission window for the week's five tiers runs seven days from Saturday 5:00 AM Pacific. Before that opening time, the privacy screen is the only visible artifact: it lists the data structures and algorithms threading into the week (grouped by topic type, in lead-in order) and the phase-cumulative DSA ladder, so reading is primed without leaking the problems. There are no midterms, finals, or umbrella exams — mastery is proven weekly through Tier 5.
 
 ---
 
@@ -62,7 +65,7 @@ Every week produces four committed artifacts:
 
 **TUTORIAL.md** — a hands-on walkthrough of the week's tooling or concept. Step by step. Every command exact. Every failure case explained.
 
-**PROBLEM.md** — a real-world engineering problem styled after SpaceX, Anduril, Apple, NVIDIA, and Second Order Effects interview problems. Incorporates C, Linux, and DSA concepts together. Verified solvable before assigned.
+**PROBLEM.md** — a real-world engineering problem set styled after SpaceX, Anduril, Apple, NVIDIA, and Second Order Effects interview problems. Incorporates C, Linux, and DSA concepts together. Verified solvable before assigned. Ships as five tiers on the same topic — Beginning, Middle, Hard, Mastery, and Mastery Confirmed — and Tier 5 is the gate that proves the week is internalized. PROBLEM.md is sealed behind a privacy screen until Saturday 5:00 AM Pacific opening time; the submission window is seven days from opening.
 
 **weekly-reports/week_#_Topic.md** — written report covering what was built, the core design decision, what broke and how it was fixed, concepts explained cold from memory, and answers to interview-style questions on time complexity, system design, and real-world application.
 
@@ -109,6 +112,8 @@ Full inventory: Flipper Zero, MacBook Pro M4, Protectli Vault VP2420, STM32 Nucl
 - Weekly reports are written from memory — no referencing the solution while writing
 - Problems include interview-style questions answered in writing every week: time complexity, scale behavior, design tradeoffs, real-systems connection, and defense of design decisions in an AI-assisted engineering environment
 - Linux is incorporated into every project where it adds real learning value via Ubuntu ARM on Parallels
+- PROBLEM.md is embargoed behind a privacy screen until Saturday 5:00 AM Pacific opening time; the five tiers are not visible — and not requested — before then
+- Mastery is verified weekly through the Tier 5 Mastery Confirmed gate. There are no midterms, finals, or umbrella exams in this curriculum; if one is ever accidentally produced it is removed and replaced with the weekly tier structure
 
 ---
 
