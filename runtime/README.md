@@ -60,6 +60,7 @@ validated file names — never interpolated into a shell string.
 | GET | `/api/languages` | registered languages |
 | POST | `/api/run` | `{language, files[], stdin}` → build + run |
 | POST | `/api/submit` | `{language, files[], tier, tests[]}` → tier grade (Tier 5 = mastery gate) |
+| POST | `/api/schedule` | `{items[], options}` → week-by-week workload plan (see below) |
 | POST | `/api/debug/start` | `{language, files[]}` → `{sessionId}` |
 | GET | `/api/debug/events?session=` | SSE stream of debug events |
 | POST | `/api/debug/command` | `{session, command, args}` (setBreakpoints, launch, continue, next, stepIn, stepOut, stackTrace, variables, evaluate) |
@@ -67,3 +68,24 @@ validated file names — never interpolated into a shell string.
 
 `files` is `[{ "name": "main.c", "content": "..." }]` — multi-file projects are
 compiled together per the language's build command.
+
+## Workload planner
+
+`POST /api/schedule` packs roadmap items into whole calendar weeks. Each item
+has an allocated hour estimate; `weeklyCapacity` is the hours actually
+dedicated per week. An item that exceeds one week is split across consecutive
+weeks and every later item cascades forward until all items have a slot.
+`bufferFactor` (default 1) multiplies every estimate to give slack on
+first-pass topics — set it to `2` to double the time.
+
+```json
+{
+  "items": [{ "name": "Pointers", "hours": 16 }, { "name": "Memory", "hours": 8 }],
+  "options": { "weeklyCapacity": 6, "bufferFactor": 1, "startWeek": 1, "startDate": "2026-05-02" }
+}
+```
+
+A 16h item at `weeklyCapacity` 6 plans as weeks of `6, 6, 4`; the next item
+starts the following week. The response reports each week's hours/slack, each
+item's `startWeek`/`endWeek`, and `overflowWeeks` (extra weeks the cascade
+added beyond one week per item).

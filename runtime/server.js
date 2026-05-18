@@ -6,6 +6,7 @@ const path = require('path');
 const { loadLanguages } = require('./src/registry');
 const { compileAndRun } = require('./src/runner');
 const { grade } = require('./src/submissions');
+const { plan } = require('./src/schedule');
 const dbg = require('./src/debug/manager');
 const sandbox = require('./src/sandbox');
 
@@ -109,6 +110,11 @@ const server = http.createServer(async (req, res) => {
       const b = await readJson(req);
       const r = await grade(lang(b.language), b.files, Number(b.tier), b.tests);
       return send(res, 200, r);
+    }
+
+    if (route === '/api/schedule' && req.method === 'POST') {
+      const b = await readJson(req);
+      return send(res, 200, plan(b.items, b.options || {}));
     }
 
     if (route === '/api/debug/start' && req.method === 'POST') {
