@@ -1,0 +1,11 @@
+{
+  "id": "rust",
+  "name": "Rust",
+  "extensions": [".rs"],
+  "entry": "main.rs",
+  "image": "rust:1-slim",
+  "debugImage": "rust:1-slim",
+  "build": ["rustc", "-g", "-o", "{out}", "{entry}"],
+  "run": ["{out}"],
+  "debugger": "gdb"
+}

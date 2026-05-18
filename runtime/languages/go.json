@@ -1,0 +1,11 @@
+{
+  "id": "go",
+  "name": "Go",
+  "extensions": [".go"],
+  "entry": "main.go",
+  "image": "golang:1-alpine",
+  "debugImage": "golang:1-alpine",
+  "build": ["go", "build", "-o", "{out}", "{entry}"],
+  "run": ["{out}"],
+  "debugger": "none"
+}

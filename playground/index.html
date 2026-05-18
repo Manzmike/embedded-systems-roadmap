@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roadmap Code Lab — Compile · Submit · Debug · Playground</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Roadmap Code Lab</h1>
+      <div class="conn">
+        <label>Runtime
+          <input id="apiBase" type="text" spellcheck="false" />
+        </label>
+        <span id="status" class="status">checking…</span>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="submit">Submit</button>
+      <button class="tab" data-tab="playground">Playground</button>
+      <button class="tab" data-tab="debugger">Debugger</button>
+    </nav>
+
+    <section class="toolbar">
+      <label>Language
+        <select id="language"></select>
+      </label>
+      <div id="fileTabs" class="file-tabs"></div>
+      <button id="addFile" title="Add file">+ file</button>
+    </section>
+
+    <main>
+      <div class="editor-wrap">
+        <div id="gutter" class="gutter"></div>
+        <textarea id="code" spellcheck="false" wrap="off"></textarea>
+      </div>
+
+      <aside class="panel">
+        <!-- SUBMIT -->
+        <div class="view" data-view="submit">
+          <h2>Tiered submission</h2>
+          <label>Tier
+            <select id="tier">
+              <option value="1">1 — Beginning</option>
+              <option value="2">2 — Middle</option>
+              <option value="3">3 — Hard</option>
+              <option value="4">4 — Mastery</option>
+              <option value="5">5 — Mastery Confirmed (gate)</option>
+            </select>
+          </label>
+          <p class="hint">
+            One test case per block: stdin, then expected stdout (leave expected
+            blank to grade on a clean compile + exit 0).
+          </p>
+          <div id="cases"></div>
+          <button id="addCase" class="secondary">+ test case</button>
+          <button id="submitBtn" class="primary">Submit tier</button>
+          <div id="submitResult" class="result"></div>
+        </div>
+
+        <!-- PLAYGROUND -->
+        <div class="view hidden" data-view="playground">
+          <h2>Playground</h2>
+          <label>stdin
+            <textarea id="pgStdin" rows="4" spellcheck="false"></textarea>
+          </label>
+          <button id="runBtn" class="primary">Compile &amp; run</button>
+          <div id="runResult" class="result"></div>
+        </div>
+
+        <!-- DEBUGGER -->
+        <div class="view hidden" data-view="debugger">
+          <h2>Debugger</h2>
+          <p class="hint">Click the gutter to toggle breakpoints.</p>
+          <div class="dbg-controls">
+            <button id="dbgStart" class="primary">Start</button>
+            <button id="dbgContinue" disabled>Continue</button>
+            <button id="dbgNext" disabled>Step over</button>
+            <button id="dbgStepIn" disabled>Step in</button>
+            <button id="dbgStepOut" disabled>Step out</button>
+            <button id="dbgStop" disabled>Stop</button>
+          </div>
+          <label>Evaluate
+            <span class="eval-row">
+              <input id="dbgExpr" type="text" spellcheck="false" />
+              <button id="dbgEval" disabled>=</button>
+            </span>
+          </label>
+          <h3>Call stack</h3>
+          <ul id="dbgStack" class="mono small"></ul>
+          <h3>Variables</h3>
+          <ul id="dbgVars" class="mono small"></ul>
+          <h3>Console</h3>
+          <pre id="dbgConsole" class="console"></pre>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

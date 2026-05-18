@@ -1,0 +1,11 @@
+{
+  "id": "javascript",
+  "name": "JavaScript (Node)",
+  "extensions": [".js", ".mjs"],
+  "entry": "main.js",
+  "image": "node:22-slim",
+  "debugImage": "node:22-slim",
+  "build": [],
+  "run": ["node", "{entry}"],
+  "debugger": "none"
+}
