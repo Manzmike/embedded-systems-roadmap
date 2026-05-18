@@ -1,0 +1,13 @@
+{
+  "name": "embedded-roadmap-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sandboxed multi-language compile / run / debug / submission runtime for the embedded-systems-roadmap playground",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

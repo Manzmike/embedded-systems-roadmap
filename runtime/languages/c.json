@@ -1,0 +1,11 @@
+{
+  "id": "c",
+  "name": "C",
+  "extensions": [".c", ".h"],
+  "entry": "main.c",
+  "image": "gcc:13",
+  "debugImage": "gcc:13",
+  "build": ["gcc", "-g", "-O0", "-std=c11", "-Wall", "-Wextra", "-o", "{out}", "{files:.c}"],
+  "run": ["{out}"],
+  "debugger": "gdb"
+}

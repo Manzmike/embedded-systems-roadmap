@@ -1,0 +1,11 @@
+{
+  "id": "python",
+  "name": "Python",
+  "extensions": [".py"],
+  "entry": "main.py",
+  "image": "python:3.12-slim",
+  "debugImage": "python:3.12-slim",
+  "build": [],
+  "run": ["python3", "-u", "{entry}"],
+  "debugger": "pdb"
+}
